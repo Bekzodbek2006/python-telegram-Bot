@@ -4,4 +4,4 @@
 
 Install this plugin using `pip`:
 
-    pip install crispy-bootstrap5
+    python-telegram-bot==20.0a0
