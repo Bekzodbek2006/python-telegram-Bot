@@ -1,4 +1,4 @@
-### My first telegram bot
+### My first python telegram bot
 
 ## Installation
 
