@@ -1,4 +1,3 @@
-from lib2to3.pgen2 import token
 from telegram import ReplyKeyboardMarkup, Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, ConversationHandler, MessageHandler, filters
 
