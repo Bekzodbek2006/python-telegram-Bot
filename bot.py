@@ -1,8 +1,7 @@
 from lib2to3.pgen2 import token
 from telegram import ReplyKeyboardMarkup, Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, ConversationHandler, MessageHandler, filters
-import os
-PORT = int(os.environ.get('PORT', 5000))
+
 
 
 buttons = ReplyKeyboardMarkup([['help'],['admin']], resize_keyboard=True)
