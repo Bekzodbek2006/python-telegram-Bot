@@ -1,5 +1,8 @@
 from telegram import ReplyKeyboardMarkup, Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, ConversationHandler, MessageHandler, filters
+import os
+PORT = int(os.environ.get('PORT', 5000))
+
 
 buttons = ReplyKeyboardMarkup([['help'],['admin']], resize_keyboard=True)
 my = ReplyKeyboardMarkup([['My nick name'],['My Username'],['My Id']], resize_keyboard=True)
@@ -14,7 +17,6 @@ async def start(update, context):
     await update.message.reply_text(
         f'Salom {update.effective_user.first_name}'
     )
-    print(f'new user @{update.effective_user.username}')
 async def help(update, context):
     await update.message.reply_text(
         f't.me/webdev06',reply_markup=buttons
@@ -56,7 +58,11 @@ conv_handler = ConversationHandler(
 
 
 
-app = ApplicationBuilder().token("your bot token").build()
+app = ApplicationBuilder().token("5401595436:AAHF4QmYrrtJORYxg3kd3QSqcQt-renOngY").build()
+app.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path='5401595436:AAHF4QmYrrtJORYxg3kd3QSqcQt-renOngY')
+app.bot.setWebhook('https://bekzodbeksbot.herokuapp.com/' + '5401595436:AAHF4QmYrrtJORYxg3kd3QSqcQt-renOngY')
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(conv_handler)
