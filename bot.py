@@ -1,3 +1,4 @@
+from lib2to3.pgen2 import token
 from telegram import ReplyKeyboardMarkup, Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, ConversationHandler, MessageHandler, filters
 import os
@@ -61,8 +62,8 @@ conv_handler = ConversationHandler(
 app = ApplicationBuilder().token("5401595436:AAHF4QmYrrtJORYxg3kd3QSqcQt-renOngY").build()
 app.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
-                          url_path=TOKEN)
-app.bot.setWebhook('https://bekzodbeksbot.herokuapp.com/' + '5401595436:AAHF4QmYrrtJORYxg3kd3QSqcQt-renOngY')
+                          url_path=token)
+app.bot.setWebhook('https://bekzodbeksbot.herokuapp.com/' + token)
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(conv_handler)
