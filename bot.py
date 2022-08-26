@@ -6,7 +6,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, Conve
 
 
 my = ReplyKeyboardMarkup([['My']], resize_keyboard=True)
-secret_btns = ReplyKeyboardMarkup([[ '2328' ], ['1225']])
+secret_btns = ReplyKeyboardMarkup([['2328'], ['1225']])
 
 async def login(update, context):
     await update.message.reply_text(
@@ -38,7 +38,7 @@ conv_handler = ConversationHandler(
     states={
         1:{
             MessageHandler(filters.Regex('^(My)$'),my),
-            MessageHandler(filters=Regex('^(2328)$'),secret2328)
+            MessageHandler(filters.Regex('^(2328)$'),secret2328)
         }
        
     },
