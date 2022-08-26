@@ -57,7 +57,12 @@ conv_handler = ConversationHandler(
 
 
 
-app = ApplicationBuilder().token("5401595436:AAHF4QmYrrtJORYxg3kd3QSqcQt-renOngY").build()
+app = ApplicationBuilder().token("5401595436:AAHp9TQu5PjBXSea-9y6_j1t29O24zFON3s").build()
+
+app.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path=token)
+app.bot.setWebhook('https://bekzodbeksbotpy.herokuapp.com/' + '5401595436:AAHp9TQu5PjBXSea-9y6_j1t29O24zFON3s')
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(conv_handler)
