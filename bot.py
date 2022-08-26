@@ -1,8 +1,5 @@
-from multiprocessing import context
-from turtle import update
 from telegram import ReplyKeyboardMarkup, Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, ConversationHandler, MessageHandler, filters
-
 
 
 my = ReplyKeyboardMarkup([['My']], resize_keyboard=True)
