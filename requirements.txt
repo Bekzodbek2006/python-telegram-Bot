@@ -1,2 +1,2 @@
 ﻿python-telegram-bot==20.0a0
- tornado==6.1
+tornado==6.1
