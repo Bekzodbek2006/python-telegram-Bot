@@ -23,21 +23,22 @@ async def help(update, context):
         't.me/webdev06'
     )
 
-async def my(update, context):
-    await update.massage.reply_text(
-        f' Sizning nick namegiz{update.effective_user.first_name} \n Sizning foydalanuvchi nomigiz @{update.effective_user.username} \n  Sizning id raqamingizni #{update.effective_user.id}'
+
+async def myfun(update, context):
+    await update.message.reply_text(
+        f' Sizning nick namegiz{update.effective_user.first_name} \nSizning foydalanuvchi nomigiz @{update.effective_user.username} \nSizning id raqamingizni {update.effective_user.id}'
     )
 
 async def secret2328(update, context):
-        await update.massage.reply_text(
-            'hello'
+        await update.message.reply_text(
+            'Siz adminmisiz? .... 😊'
         )
 
 conv_handler = ConversationHandler(
     entry_points=[CommandHandler("login", login)],
     states={
         1:{
-            MessageHandler(filters.Regex('^(My)$'),my),
+            MessageHandler(filters.Regex('^(My)$'),myfun),
             MessageHandler(filters.Regex('^(2328)$'),secret2328)
         }
        
