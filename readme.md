@@ -4,4 +4,4 @@
 
 Install this plugin using `pip`:
 
-    python-telegram-bot==20.0a0
+    pip install python-telegram-bot==20.0a0
